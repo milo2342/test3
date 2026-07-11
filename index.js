@@ -170,16 +170,13 @@ reg(
 );
 
 reg(
-  new SlashCommandBuilder()
-    .setName("terms")
-    .setDescription("View Titan Development legal information"),
-
+  new SlashCommandBuilder().setName("terms").setDescription("View Titan Development legal information"),
   async (i, client) => {
-
     const embed = new EmbedBuilder()
-      .setColor(COLORS.main || 0x5865F2)
-      .setTitle("📜 Titan Development Legal Information")
-      .setDescription(
+      .setTitle("Titan Development  ·  Legal Information")
+    .setColor("#000000")
+    .setImage("https://cdn.discordapp.com/attachments/1525015180134580318/1525593844597526600/Banner.png")
+    .setDescription(
         "**By purchasing or verifying, you agree to all terms listed below.**\n\n" +
 
         "━━━━━━━━━━━━━━━━━━━━\n" +
