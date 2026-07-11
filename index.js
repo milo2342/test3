@@ -170,77 +170,79 @@ reg(
 );
 
 reg(
-  new SlashCommandBuilder().setName("Rules").setDescription("View Titan Development legal information"),
+  new SlashCommandBuilder()
+    .setName("rules")
+    .setDescription("View Titan Development legal information"),
+
   async (i, client) => {
+
     const embed = new EmbedBuilder()
       .setTitle("Titan Development  ·  Legal Information")
-    .setColor("#000000")
-    .setImage("https://cdn.discordapp.com/attachments/1525015180134580318/1525593844597526600/Banner.png")
-    .setDescription(
-        "**By purchasing or verifying, you agree to all terms listed below.**\n\n" +
-
-        "━━━━━━━━━━━━━━━━━━━━\n" +
-
-        "** Refund Policy**\n" +
-        "Once a price has been agreed upon, payment must be made upfront before work begins.\n\n" +
-        "**Refunds will only be issued if:**\n" +
-        "• The requested product is not created.\n" +
-        "• The order is rejected after payment.\n\n" +
-        "**Refunds will NOT be issued for:**\n" +
-        "• Changing your mind.\n" +
-        "• Receiving the requested product but being unhappy.\n" +
-        "• Accidental purchases.\n\n" +
-
-        "** Payment**\n" +
-        "Payment must be completed before work begins.\n\n" +
-        "Accepted methods:\n" +
-        "• PayPal\n" +
-        "• Crypto\n" +
-        "• Steam Gift Cards (certain cases)\n" +
-        "• Classic Nitro (certain cases)\n\n" +
-
-        "** Orders**\n" +
-        "Titan Development reserves the right to decline requests, including but not limited to:\n" +
-        "• Fraudulent transactions.\n" +
-        "• Client misuse of services.\n" +
-        "• Unnecessary requests.\n" +
-        "• Service refusal at our discretion.\n\n" +
-
-        "Additional work cannot be added after payment unless agreed upon. New requests may require a separate order.\n\n" +
-
-        "**Ticket Creation**\n" +
-        "• Multiple products → Create a Bundle Order ticket.\n" +
-        "• Single product → Create a Basic Order ticket.\n\n" +
-
-        "** Client Approval & Revisions**\n" +
-        "Clients must approve all materials before finalisation.\n" +
-        "Revisions are allowed; excessive revisions may require additional payment.\n\n" +
-
-        "** Confidentiality**\n" +
-        "Any private information provided during an order will remain confidential and will not be shared or used without permission.\n\n" +
-
-        "** Representations & Warranties**\n" +
-        "Titan Development confirms that created designs are allowed to be distributed and will take responsibility for any issues caused by ownership disputes.\n\n" +
-
-        "** Disclaimer**\n" +
-        "Titan Development does not guarantee increased profits, sales, exposure, or brand recognition from delivered products.\n\n" +
-
-        "**🇬🇧 Governing Law**\n" +
-        "These terms are governed under UK law.\n\n" +
-
-        "** Modification of Terms**\n" +
-        "Titan Development reserves the right to update these terms at any time. Users are responsible for reviewing changes.\n\n" +
-
-        "━━━━━━━━━━━━━━━━━━━━\n" +
-        "**By purchasing or verifying, you confirm that you agree to these Terms of Service.**"
+      .setColor(0x000000)
+      .setImage("https://cdn.discordapp.com/attachments/1525015180134580318/1525593844597526600/Banner.png")
+      .addFields(
+        {
+          name: "💳 Refund Policy",
+          value:
+            "Once a price has been agreed upon, payment must be made upfront before work begins.\n\n" +
+            "**Refunds are only issued if:**\n" +
+            "• The requested product is not created.\n" +
+            "• The order is rejected after payment.\n\n" +
+            "**Refunds are NOT issued for:**\n" +
+            "• Changing your mind.\n" +
+            "• Being unhappy with a completed product.\n" +
+            "• Accidental purchases."
+        },
+        {
+          name: "💰 Payment",
+          value:
+            "Payment must be completed before work begins.\n\n" +
+            "Accepted methods:\n" +
+            "• PayPal\n" +
+            "• Steam Gift Card (certain cases)\n" +
+            "• Nitro (certain cases)"
+        },
+        {
+          name: "📦 Orders",
+          value:
+            "Titan Development may decline requests including:\n" +
+            "• Fraudulent transactions\n" +
+            "• Client misuse of services\n" +
+            "• Unnecessary requests\n" +
+            "• Refusal of service at discretion\n\n" +
+            "Additional work after payment may require a new order."
+        },
+        {
+          name: "🎫 Ticket Creation",
+          value:
+            "• Multiple products → Bundle Order ticket\n" +
+            "• Single product → Basic Order ticket"
+        },
+        {
+          name: "✏️ Client Approval & Revisions",
+          value:
+            "Clients must approve materials before finalisation.\n" +
+            "Additional revisions outside normal changes may require extra payment."
+        },
+        {
+          name: "🔒 Confidentiality",
+          value:
+            "All private information shared during an order remains confidential and will not be shared without permission."
+        },
+        {
+          name: "⚖️ Legal",
+          value:
+            "Titan Development operates under UK law.\n\n" +
+            "Terms may be updated at any time. Users are responsible for reviewing changes."
+        }
       )
       .setFooter({
-      text: "Titan Development • Legal Information"
-    .setTimestamp();
-      
+        text: "Titan Development • By purchasing/verifying you agree to these terms"
+      })
+      .setTimestamp();
+
     await i.reply({
-      embeds: [embed],
-      ephemeral: false
+      embeds: [embed]
     });
   }
 );
