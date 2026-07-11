@@ -170,7 +170,7 @@ reg(
 );
 
 reg(
-  new SlashCommandBuilder().setName("terms").setDescription("View Titan Development legal information"),
+  new SlashCommandBuilder().setName("Rules").setDescription("View Titan Development legal information"),
   async (i, client) => {
     const embed = new EmbedBuilder()
       .setTitle("Titan Development  ·  Legal Information")
@@ -234,12 +234,9 @@ reg(
         "━━━━━━━━━━━━━━━━━━━━\n" +
         "**By purchasing or verifying, you confirm that you agree to these Terms of Service.**"
       )
-      
-     .setFooter({
+      .setFooter({
       text: "Titan Development • Legal Information"
-    .setImage("https://cdn.discordapp.com/attachments/1525015180134580318/1525593844597526600/Banner.png") 
-    })
-      .setTimestamp();
+    .setTimestamp();
       
     await i.reply({
       embeds: [embed],
