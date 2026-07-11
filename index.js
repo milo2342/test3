@@ -170,6 +170,88 @@ reg(
 );
 
 reg(
+  new SlashCommandBuilder()
+    .setName("terms")
+    .setDescription("View Titan Development legal information"),
+
+  async (i, client) => {
+
+    const embed = new EmbedBuilder()
+      .setColor(COLORS.main || 0x5865F2)
+      .setTitle("📜 Titan Development Legal Information")
+      .setDescription(
+        "**By purchasing or verifying, you agree to all terms listed below.**\n\n" +
+
+        "━━━━━━━━━━━━━━━━━━━━\n" +
+
+        "** Refund Policy**\n" +
+        "Once a price has been agreed upon, payment must be made upfront before work begins.\n\n" +
+        "**Refunds will only be issued if:**\n" +
+        "• The requested product is not created.\n" +
+        "• The order is rejected after payment.\n\n" +
+        "**Refunds will NOT be issued for:**\n" +
+        "• Changing your mind.\n" +
+        "• Receiving the requested product but being unhappy.\n" +
+        "• Accidental purchases.\n\n" +
+
+        "** Payment**\n" +
+        "Payment must be completed before work begins.\n\n" +
+        "Accepted methods:\n" +
+        "• PayPal\n" +
+        "• Crypto\n" +
+        "• Steam Gift Cards (certain cases)\n" +
+        "• Classic Nitro (certain cases)\n\n" +
+
+        "** Orders**\n" +
+        "Titan Development reserves the right to decline requests, including but not limited to:\n" +
+        "• Fraudulent transactions.\n" +
+        "• Client misuse of services.\n" +
+        "• Unnecessary requests.\n" +
+        "• Service refusal at our discretion.\n\n" +
+
+        "Additional work cannot be added after payment unless agreed upon. New requests may require a separate order.\n\n" +
+
+        "**Ticket Creation**\n" +
+        "• Multiple products → Create a Bundle Order ticket.\n" +
+        "• Single product → Create a Basic Order ticket.\n\n" +
+
+        "** Client Approval & Revisions**\n" +
+        "Clients must approve all materials before finalisation.\n" +
+        "Revisions are allowed; excessive revisions may require additional payment.\n\n" +
+
+        "** Confidentiality**\n" +
+        "Any private information provided during an order will remain confidential and will not be shared or used without permission.\n\n" +
+
+        "** Representations & Warranties**\n" +
+        "Titan Development confirms that created designs are allowed to be distributed and will take responsibility for any issues caused by ownership disputes.\n\n" +
+
+        "** Disclaimer**\n" +
+        "Titan Development does not guarantee increased profits, sales, exposure, or brand recognition from delivered products.\n\n" +
+
+        "**🇬🇧 Governing Law**\n" +
+        "These terms are governed under UK law.\n\n" +
+
+        "** Modification of Terms**\n" +
+        "Titan Development reserves the right to update these terms at any time. Users are responsible for reviewing changes.\n\n" +
+
+        "━━━━━━━━━━━━━━━━━━━━\n" +
+        "**By purchasing or verifying, you confirm that you agree to these Terms of Service.**"
+      )
+      
+     .setFooter({
+      text: "Titan Development • Legal Information"
+    .setImage("https://cdn.discordapp.com/attachments/1525015180134580318/1525593844597526600/Banner.png") 
+    })
+      .setTimestamp();
+      
+    await i.reply({
+      embeds: [embed],
+      ephemeral: false
+    });
+  }
+);
+
+reg(
   new SlashCommandBuilder().setName("globalmute").setDescription("Mute a user across all approved guilds")
     .addUserOption(o=>o.setName("user").setDescription("Server member").setRequired(false))
     .addStringOption(o=>o.setName("userid").setDescription("Raw User ID").setRequired(false))
